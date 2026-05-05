@@ -90,7 +90,10 @@ Hệ thống học máy pipeline hoàn chỉnh, giải quyết bài toán **gán
 | **Balanced Accuracy** | ~0.94 |
 | **Macro F1‑Score** | ~0.956 |
 
-> **Mặc dù điểm số tổng rất cao, các lớp thiểu số vẫn là thách thức**. Cơ chế cảnh báo khi độ tin cậy thấp giúp sản phẩm trở nên đáng tin cậy hơn.
+> **Lưu ý:**  
+> - Accuracy cao một phần do dữ liệu mất cân bằng (một số lớp chiếm ưu thế).  
+> - Balanced Accuracy và Macro F1 cho thấy mô hình vẫn hoạt động khá tốt trên các lớp nhỏ, nhưng chưa thực sự ổn định khi gặp sản phẩm mới.  
+> - Trong thực tế, một số danh mục ít mẫu (ví dụ: Home & Kitchen, Wearables) vẫn dễ bị dự đoán sai nếu thiếu từ khóa đặc trưng. Cơ chế cảnh báo khi độ tin cậy thấp có thể phần nào giúp người dùng nhận biết được một số trường hợp này.
 
 ---
 
