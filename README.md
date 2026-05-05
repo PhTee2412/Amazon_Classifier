@@ -1,10 +1,3 @@
----
-title: Amazon Product Classifier
-sdk: gradio
-sdk_version: 4.44.0
-app_file: src/app.py
----
-
 # Amazon Product Classifier
 
 **Dự đoán danh mục sản phẩm Amazon bằng NLP & Học Máy – từ dữ liệu chưa có nhãn**
@@ -97,10 +90,25 @@ Hệ thống học máy pipeline hoàn chỉnh, giải quyết bài toán **gán
 | **Balanced Accuracy** | ~0.94 |
 | **Macro F1‑Score** | ~0.956 |
 
-> Mặc dù điểm số tổng rất cao, các lớp thiểu số vẫn là thách thức. Cơ chế cảnh báo khi độ tin cậy thấp giúp sản phẩm trở nên đáng tin cậy hơn.
+> **Mặc dù điểm số tổng rất cao, các lớp thiểu số vẫn là thách thức**. Cơ chế cảnh báo khi độ tin cậy thấp giúp sản phẩm trở nên đáng tin cậy hơn.
 
 ---
 
+## Hạn chế đã biết (Known Limitations)
+
+Mặc dù mô hình đạt độ chính xác tổng thể ~96%, trong thực tế triển khai vẫn tồn tại nhiều trường hợp dự đoán chưa chính xác, đặc biệt với các danh mục có số lượng mẫu ít. Nguyên nhân chủ yếu đến từ **sự hạn chế của tập từ khóa** và **ảnh hưởng từ các đặc trưng số**:
+
+- **Từ khóa chưa được làm giàu đầy đủ**: Hệ thống gán nhãn và trích xuất đặc trưng hiện dựa trên một bộ từ khóa thủ công (`category_keywords`) còn khá khiêm tốn. Các sản phẩm có tên không chứa từ khóa đặc trưng (ví dụ: “Kindle”, “Instant Pot”, v.v) dễ bị mô hình liên tưởng sang nhóm khác chiếm ưu thế.
+- **Ảnh hưởng từ các đặc trưng số**: Do dữ liệu huấn luyện mất cân bằng (đa số là đồ điện tử), các biến như `price`, `rating`, `reviews` có thể “lấn át” tín hiệu ngữ nghĩa yếu từ tên sản phẩm. Điều này khiến mô hình dễ dự đoán về các lớp phổ biến (ví dụ: Computers & Accessories) thay vì đúng lớp hiếm (Home & Kitchen, Wearables).
+- **Dữ liệu huấn luyện gốc hoàn toàn không có nhãn**: Việc phải tự động gán nhãn bằng kết hợp luật và AI tiềm ẩn sai số lan truyền, nhất là ở những vùng dữ liệu sản phẩm không rõ ràng.
+
+Để cải thiện, hướng phát triển tiếp theo có thể tập trung vào:
+- Bổ sung thêm mẫu cho các lớp thiểu số và làm giàu từ khóa đặc trưng.
+- Fine‑tune Sentence‑BERT trên chính tập dữ liệu Amazon.
+- Xây dựng thêm các đặc trưng ngữ nghĩa (ví dụ: cờ `is_kitchen_appliance`, `is_ereader`) để giảm phụ thuộc vào giá và đánh giá.
+
+---
+  
 ##  Hướng dẫn cài đặt & Chạy Demo
 
 1. **Yêu cầu:** Python 3.9+
@@ -112,5 +120,5 @@ Hệ thống học máy pipeline hoàn chỉnh, giải quyết bài toán **gán
 
 ---
 
-- **Tên**: Phương Thảo
+ **Demo trực tiếp:** [https://huggingface.co/spaces/PhTee/amazon-classifier](https://huggingface.co/spaces/PhTee/amazon-classifier)
 - **Email**: phtee2412@gmail.com
