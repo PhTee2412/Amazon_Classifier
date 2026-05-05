@@ -1,0 +1,9 @@
+gradio
+pandas
+numpy
+scikit-learn
+sentence-transformers
+lightgbm
+joblib
+matplotlib
+seaborn
