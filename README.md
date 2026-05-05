@@ -79,6 +79,7 @@ Hệ thống học máy pipeline hoàn chỉnh, giải quyết bài toán **gán
 ### Triển khai
 - **Gradio:** giao diện web trực quan.
 - **Cảnh báo độ tin cậy:** tự động hiển thị cảnh báo nếu xác suất cao nhất < ngưỡng (50%) để cảnh báo người dùng khỏi các dự đoán kém chắc chắn.
+-  **Demo trực tiếp:** [https://huggingface.co/spaces/PhTee/amazon-classifier](https://huggingface.co/spaces/PhTee/amazon-classifier)
 
 ---
 
@@ -120,5 +121,4 @@ Mặc dù mô hình đạt độ chính xác tổng thể ~96%, trong thực t�
 
 ---
 
- **Demo trực tiếp:** [https://huggingface.co/spaces/PhTee/amazon-classifier](https://huggingface.co/spaces/PhTee/amazon-classifier)
 - **Email**: phtee2412@gmail.com
