@@ -13,7 +13,6 @@ Hệ thống học máy pipeline hoàn chỉnh, giải quyết bài toán **gán
 - **Bài toán:** Phân loại đa lớp (Multi-class Classification)
 - **Nguồn dữ liệu:** [Amazon Products Sales Dataset 42k Items (2025)](https://www.kaggle.com/datasets/ikramshah512/amazon-products-sales-dataset-42k-items-2025?select=amazon_products_sales_data_uncleaned.csv) từ Kaggle.  
    **Đặc điểm cốt lõi:** Dữ liệu chỉ bao gồm tên sản phẩm, giá, đánh giá,... **hoàn toàn không có nhãn danh mục**. Điều này biến bài toán trở thành tự động tạo ra “ground truth” trước khi có thể huấn luyện mô hình phân loại.
--  **Demo trực tiếp:** [https://huggingface.co/spaces/PhTee/amazon-classifier](https://huggingface.co/spaces/PhTee/amazon-classifier)
 -  **Phân tích chi tiết (code, biểu đồ, bản đồ phân cụm, ma trận nhầm lẫn, feature importance,...):** [Google Colab Notebook](https://colab.research.google.com/drive/1vQbgzVixv8uaIGvLJACGdlxaM2jeR4vL?usp=sharing)
 - ** 10 danh mục mục tiêu do tôi định nghĩa** (dựa trên phân tích thị trường và đặc trưng sản phẩm):
   1. `Laptops`
